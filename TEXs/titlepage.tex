@@ -1,0 +1,85 @@
+%% PAGE SETUP
+\thispagestyle{empty} % no page number, header or footer
+
+\vspace*{-2truecm}
+
+\newlength{\HeadWidth}
+\setlength{\HeadWidth}{\textwidth}
+
+\newlength{\LogoWidthL}
+\settowidth{\LogoWidthL}{\includegraphics[height=20mm]{./PICTURES/ResearchPlanTitle.jpg}}
+\addtolength{\HeadWidth}{-\LogoWidthL}
+\addtolength{\HeadWidth}{-3mm} % for correction
+
+\newlength{\BoxBreite}
+\setlength{\BoxBreite}{\textwidth}
+
+\vspace*{-1.5cm}
+{
+  \parbox[b]{\BoxBreite}
+  {                               
+    \includegraphics[height=1.96cm,width=11.30cm]{\Pics/ResearchPlanTitle.jpg}
+  }
+}       
+\vspace{1.35cm}
+
+\begin{tabularx}{\textwidth}{l}
+  \textbf{RESEARCH PLAN} \\
+\Xhline{1.5pt} 
+\end{tabularx}
+
+\vspace {0.5cm}
+
+\begin{tabularx}{\textwidth}{l}
+\textbf{Details of the doctoral candidate} \\
+\Xhline{1.2pt} \\
+\small{First name and surnames} \\ \\
+\large{*****} \\
+\Xhline{1\arrayrulewidth}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{l}
+\small{Doctoral programme} \\
+\large{*****} \\
+\Xhline{1\arrayrulewidth}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{l}
+\small{Research plan title} \\
+\large{***** } \\ 
+\Xhline{1\arrayrulewidth}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{l}
+\\ \textbf{Thesis supervisor} \\
+\Xhline{1\arrayrulewidth}
+\small{First name and surnames} \\
+\large{*****} \\
+\Xhline{1\arrayrulewidth}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{l}
+\\ \textbf{Thesis co-supervisor (if applicable)} \\
+\Xhline{1\arrayrulewidth}
+\small{First name and surnames} \\
+\large{*****} \\
+\Xhline{1\arrayrulewidth}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{l}
+\\ \textbf{Tutor or internal examiner (if applicable)} \\
+\Xhline{1\arrayrulewidth}
+First name and surnames \\
+\large{*****} \\
+\Xhline{1\arrayrulewidth}
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{l l}
+  \\ \textbf{Bachelor Degree: } & \textbf{University and year: } \\
+  ***** & ***** \\ \\
+  \\ \textbf{Master Degree: } & \textbf{University and year: } \\
+  ***** & ***** \\
+  \Xhline{1\arrayrulewidth}
+  \end{tabularx}
+
+\endinput

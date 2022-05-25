@@ -1,0 +1,25 @@
+-------------------------------
+How to use this thesis?
+-------------------------------
+
+Use of PDFLATEX
+
+a) Compiling the document:
+  pdflatex main.tex
+
+b) Changing the output name (creates a file called LASTNAME_YEAR.pdf)
+  pdflatex --jobname=LASTNAME_YEAR main.tex
+
+c) An optimal workflow is (this should set all pages and references
+   correctly):
+  pdflatex --jobname=LASTNAME_YEAR main.tex
+  bibtex JOBNAME.aux
+  pdflatex --jobname=LASTNAME_YEAR main.tex
+  pdflatex --jobname=LASTNAME_YEAR main.tex
+
+-------------------------------
+
+Use of BIBTEX
+
+a) To create a file containing your bibliography
+  bibtex JOBNAME.aux

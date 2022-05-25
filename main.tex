@@ -1,0 +1,191 @@
+% \documentclass[a4paper,12pt,twoside]{scrreprt}
+\documentclass[a4paper,12pt,tikz]{article}
+
+
+% Für deutsche Überschriften, usw. dieses Paket aktivieren
+% \usepackage[ngerman]{babel}
+
+%% REQUIRED PACKAGES
+\usepackage{amsfonts,amsmath,amssymb} % math stuff
+\usepackage{booktabs} % better layout for tables
+\usepackage{color} % enable use of colors
+\usepackage{fancyhdr} % definition of own headers/footers
+\usepackage{graphicx,wrapfig} % for including pictures
+\usepackage{units} % for giving quantities the right surrounding
+\usepackage{xspace} % correct spacing behind DuMuX command
+\usepackage[version=4]{mhchem} % better layout for chemical notation
+
+%% CSV FILE PACKAGE
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{siunitx} % Formats the units and values
+\usepackage{pgfplotstable} % Generates table from .csv
+\usepackage[np, autolanguage]{numprint}
+\usepackage{siunitx}
+\sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.3}
+
+% Setup siunitx:
+\sisetup{
+  round-mode          = places, % Rounds numbers
+  round-precision     = 2, % to 2 places
+}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % Allows to place the legend below plot
+\usepgfplotslibrary{units} % Allows to enter the units nicely
+
+\usepackage{csvsimple,longtable,booktabs}
+\setlength{\topmargin}{-10.4mm}
+\setlength{\headheight}{0.0mm}
+\setlength{\headsep}{10.0mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{242mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\marginparwidth}{0mm}
+\setlength{\marginparsep}{0mm}
+
+%% PACKAGE FOR FLOWCHART
+\usepackage{tikz}
+\usepackage{flowchart}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+
+\tikzstyle{connector} = [circle, radius=3cm, text centered, draw=black]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=5cm, minimum height=1cm, text centered, text width= 5cm, draw=black]
+
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, text width= 7cm, draw=black]
+
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, text width= 3cm, draw=black]
+
+\tikzstyle{predefinedprocess} = [draw, predproc, minimum width=3cm, minimum height=1cm, text centered, text width= 7cm, draw=black]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+%%
+\tikzstyle{block} = [rectangle, draw, 
+    text width=17em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{description} = [rectangle, draw, 
+    text width=15em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, predproc, text width=15em, text centered, minimum height=3em]
+\tikzstyle{dec} = [diamond, text width=5em, text centered, minimum height=4em]
+
+%% Package for sub-plots
+\usepackage{caption}
+\usepackage{subcaption}
+
+%% OPTIONAL PACKAGES
+\usepackage{fancyvrb} % allows the definition of the fontsize argument inside Verbatim
+\usepackage[labelfont=bf]{caption}
+% \captionsetup{labelfont=bf}
+\captionsetup{format=plain, labelfont=bf}
+\usepackage{chngcntr}
+\usepackage{array}
+\usepackage{makecell}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\usepackage[export]{adjustbox}
+\usepackage[titles]{tocloft}
+\renewcommand{\cftdot}{}
+\usepackage{chemformula}%loaded by chemmacros
+\usepackage{array} % needed for the new column type
+\usepackage{lipsum} % dummy text with \lipsum[1]
+\usepackage{subcaption} % multiple figures in one row
+\usepackage{rotating} % rotating of figures
+\usepackage{todonotes} % for colorful todo notes
+\usepackage{dirtytalk} % package for quote
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=black,bookmarks=true,bookmarksopen=true,bookmarksopenlevel=2]{hyperref} % enable links
+\hypersetup{
+%  pdfpagemode=None,
+  citecolor=cyan,
+  pdfpagemode=UseOutlines,
+  pdfstartview=Fit,
+  pdftitle={},
+  pdfsubject={},
+  pdfauthor={},
+  pdfkeywords={},
+  pdfcreator={pdflatex}
+}
+\usepackage{cleveref}
+\usepackage{physics}
+\newcommand{\comment}[1]{} % FOR COMMENTING
+%% PAGE SETUP
+\textheight 22.5cm
+\textwidth 15.5cm
+\oddsidemargin 0.5cm
+\evensidemargin -0.1cm
+\parindent 0cm
+\topmargin 0cm
+
+%% NUMERATION OF ELEMENTS
+\setcounter{secnumdepth}{5} % depth of numeration, including \subparagraph
+\renewcommand{\theequation}{\thechapter.\arabic{equation}} % numeration for equations
+
+%% TEXT APPEARANCE
+\renewcommand{\labelitemi}{$-$} % char for itemize environments
+\renewcommand{\baselinestretch}{1.05} % line spacing
+\newcommand{\code}{\texttt}
+
+%% USER DEFINED SETUP
+\newcolumntype{V}[1]{>{\raggedright\hspace{0pt}}p{#1}} % columntype with word wrap
+\newcommand{\Pics}{./PICTURES} % path to figures
+\newcommand{\DuMuX}{DuMu$^\textrm{x}$\xspace}
+\usepackage{tabularx}
+
+%% FOR PART, SECTIONS, SUBSECTIONS NUMBERING
+\renewcommand\thesection{\arabic{section}}
+
+%% FOR ADDING TEXs FILES
+\usepackage{inputenc}
+
+%% FOR REFERENCES
+\renewcommand{\bibname}{References}
+
+\begin{document}
+
+\pagenumbering{arabic}  % normal numbering
+% \setcounter{page}{1} % only chapters and subsections
+
+\input{TEXs/titlepage}
+\newpage
+
+\input{TEXs/objective}
+\newpage
+
+\input{TEXs/state-of-art}
+\newpage
+
+\input{TEXs/methodology}
+\newpage
+
+%% BIBLIOGRAPHY
+\pdfbookmark[0]{Bibliography}{Bibliography}
+\bibliographystyle{plainnat}
+\bibliography{LITERATURE/references} 
+\newpage
+
+\input{TEXs/gantt}
+\newpage
+
+\input{TEXs/results}
+\newpage
+
+\input{TEXs/signatures}
+\newpage
+
+\input{TEXs/remarks}
+\newpage
+
+\end{document}
+
